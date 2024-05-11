@@ -1,0 +1,72 @@
+Server:
+  RunMode: "debug" #release为生产模式
+  Address: "9090"
+  ReadTimeout: 5s
+  WriteTimeout: 5s
+  DefaultContextTimeout: 30s
+App:
+  Name: "mognlia"
+  Version: "1.0"
+Log:
+  Level: "debug"
+  LogSavePath: "storage/Applogs/"
+  LowLevelFile: "info"
+  LogFileExt: ".log"
+  HighLevelFile: "error"
+  MaxSize: 10
+  MaxAge: 30
+  MaxBackups: 7
+  Compress: false
+Mysql:
+  user: "root"
+  password: "1234567"
+  host: "127.0.0.1"
+  port: 3306
+  dbName: "gin-vue-ttms"
+Redis:
+  addr: "127.0.0.1:6379"
+  password: ""
+  poolSize: 20
+  CacheTime: 1h
+SMTPInfo:
+  host: "smtp.qq.com"
+  port: 465
+  userName: "1785260184@qq.com"
+  password: "***"
+  isSSl: true
+  from: "1785260184@qq.com"
+  to:
+  - "1785260184@qq.com"
+Rule:
+  delUserTime: 60s
+  delCodeTime: 120s
+  DefaultAccountAvatar: "http://lycmall.lyc666.xyz/chat/first.jpg"
+  DefaultClientTimeout: 20s
+  DefaultPagePerNum: 10
+  FileMaxSize: 1024000
+  DefaultInsertDataNum: 50
+  DefaultUserFavorPage: 5 # 用户关注电影的总页数
+  DefaultUserFavorSize: 10 #用户关注电影每页的个数
+  LockTicketTime: 15m #锁票的超时时间
+  LockOrderTime: 15m #订单超时的时间
+Work: #工作池配置
+  taskChanCapacity: 50 # 任务队列容量
+  workerChanCapacity: 50 # 工作队列容量
+  workerNum: 10 # 工作池数量
+Token:
+  key: "s1Qimd1a6lqEiFRh56KfA25gXoY2MEyF" #长度得是32位
+  accessToken: 24h
+  refreshToken: 48h
+  AuthType: "x_token"
+  AuthKey: "Claims"
+AliyunOSS:
+  Endpoint: "http://oss-cn-hangzhou.aliyuncs.com"
+  AccessKeyId: "***"
+  AccessKeySecret: "***"
+  BucketName: "lycmall2"
+  BucketUrl: "ttms"
+  BasePath: "http://lycmall.lyc666.xyz"
+Auto:
+    AutoFlushReadCount2DBTime: 10m
+    PeopleFavorToCacheTime: 10m
+    DeleteOutTimeTime: 10m

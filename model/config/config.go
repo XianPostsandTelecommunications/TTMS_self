@@ -3,6 +3,17 @@ package config
 import "time"
 
 type AllConfig struct {
+	Server    Server    `mapstructure:"Server"`
+	App       App       `mapstructure:"App"`
+	Log       Log       `mapstructure:"Log"`
+	Mysql     Mysql     `mapstructure:"Mysql"`
+	Redis     Redis     `mapstructure:"Redis"`
+	SMTPInfo  SMTPInfo  `mapstructure:"SMTPInfo"`
+	Rule      Rule      `mapstructure:"Rule"`
+	Work      Work      `mapstructure:"Work"`
+	Token     Token     `mapstructure:"Token"`
+	AliyunOSS AliyunOSS `json:"aliyunOSS" mapstructure:"AliyunOSS"`
+	Auto      Auto      `mapstructure:"Auto"`
 }
 
 // Server 用于存储服务器相关的配置信息

@@ -13,4 +13,5 @@ var Group = new(group)
 
 func AllInit() {
 	Group.Log.Init()
+	Group.Va.InitTrans("zh")
 }
