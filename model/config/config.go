@@ -73,3 +73,36 @@ type Rule struct {
 	LockTicketTime       time.Duration `json:"lockTicketTime" mapstructure:"LockTicketTime"`             //锁定票务的时间间隔
 	LockOrderTime        time.Duration `json:"lockOrderTime" mapstructure:"LockOrderTime"`               //锁定订单的时间间隔
 }
+
+// Work 任务工作
+type Work struct {
+	TaskChanCapacity   int `json:"taskChanCapacity" mapstructure:"TaskChanCapacity"`     //任务通道容量
+	WorkerChanCapacity int `json:"workerChanCapacity" mapstructure:"WorkerChanCapacity"` //工作者通道容量
+	WorkerNum          int `json:"workerNum" mapstructure:"WorkerNum"`                   //工作者数量
+}
+
+// Token 令牌
+type Token struct {
+	Key              string        ` mapstructure:"Key"`              //令牌的键值
+	AccessTokenTime  time.Duration ` mapstructure:"AccessTokenTime"`  //访问令牌有效期
+	RefreshTokenTime time.Duration ` mapstructure:"RefreshTokenTime"` //刷新令牌有效期
+	AuthType         string        ` mapstructure:"AuthType"`         //认证类型
+	AuthKey          string        ` mapstructure:"AuthKey"`          //认证密钥
+}
+
+// AliyunOSS 阿里云存储服务
+type AliyunOSS struct {
+	Endpoint        string `json:"endpoint" mapstructure:"Endpoint" ` //访问域名，IP地址
+	AccessKeyID     string `json:"accessKeyID" mapstructure:"AccessKeyID"`
+	AccessKeySecret string `json:"accessKeySecret" mapstructure:"AccessKeySecret"`
+	BucketName      string `json:"bucketName" mapstructure:"BucketName"` //存储桶名称
+	BucketUrl       string `json:"bucketUrl" mapstructure:"BucketUrl"`   //存储桶URL
+	BasePath        string `json:"basePath" mapstructure:"BasePath"`     //存储桶中存储对象的基本路径
+}
+
+// Auto 自动操作相关配置
+type Auto struct {
+	AutoFlushReadCount2DBTime time.Duration `json:"autoFlushReadCount2DBTime" mapstructure:"AutoFlushReadCount2DBTime" ` //自动读取计数器刷新到数据库的时间间隔
+	PeopleFavorToCacheTime    time.Duration `json:"peopleFavorToCacheTime" mapstructure:"PeopleFavorToCacheTime"`        //用户喜好缓存时间
+	DeleteOutTimeTime         time.Duration `json:"deleteOutTimeTime" mapstructure:"DeleteOutTimeTime"`                  //删除过期数据的时间间隔
+}
