@@ -1,11 +1,11 @@
 package global
 
 import (
-	"TTMS_self/model/config"
-	"TTMS_self/pkg/goroutine/work"
-	"TTMS_self/pkg/logger"
-	"TTMS_self/pkg/token"
 	ut "github.com/go-playground/universal-translator"
+	"mognolia/internal/model/config"
+	"mognolia/internal/pkg/goroutine/work"
+	"mognolia/internal/pkg/logger"
+	"mognolia/internal/pkg/token"
 )
 
 var (
